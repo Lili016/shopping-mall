@@ -9,5 +9,3 @@ class Area(db.Model):
     parent_id = db.Column(db.Integer)
 
 
-if __name__ == '__main__':
-    db.create_all()

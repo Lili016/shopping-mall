@@ -150,13 +150,14 @@
             <div class="type_select">
                 <label>{{ spec.name }}:</label>
                 {% for option in spec.options %}
-{#                {% if option.sku_id == sku.id %}#}
-{#                <a href="javascript:;" class="select">{{ option.value }}</a>#}
-{#                {% elif option.sku_id %}#}
-{#                <a href="/goods/{{option.sku_id}}.html">{{ option.value }}</a>#}
-{#                {% else %}#}
-                <a href="javascript:;">{{ option.value }}</a>
-{#                {% endif %}#}
+                    {% if option.select == 0 %}
+                        <a href="javascript:;" class="select">{{ option.value }}</a>
+                    {% elif option.select %}
+<!--                        <a href="/goods/{{option.sku_id}}.html">{{ option.value }}</a>-->
+                        <a href="javascript:;">{{ option.value }}</a>
+                    {% else %}
+                        <a href="javascript:;">{{ option.value }}</a>
+                    {% endif %}
                 {% endfor %}
             </div>
             {% endfor %}
